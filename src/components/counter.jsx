@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     count: 0,
-    tags: ["task1", "task2", "task3"]
+    tags: []
     // imageUrl: "https://picsum.photos/200"
   };
 
@@ -43,6 +43,8 @@ class Counter extends Component {
           Increment
         </button>{" "} 
         */}
+        {this.state.tags.length === 0 && "Don't forget to set a task!"}
+        {/* how to render under certian conditions */}
         {this.renderTags()}
       </React.Fragment>
     );
