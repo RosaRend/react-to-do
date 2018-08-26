@@ -20,6 +20,19 @@ class Counter extends Component {
     );
   }
 
+  constructor() {
+    //returns a new function
+    super();
+    //Needs to be b4 any statement when implementing a constructor for a React.Comp subclass
+    this.handleIncrement = this.handleIncrement.bind(this);
+    //_________________________________________^remember functions are objects so methods and properties are a yes
+    //this returns a
+  }
+
+  handleIncrement() {
+    console.log("Increment Clicked", this.state.count);
+  }
+
   style = {
     fontSize: 30,
     fontWeight: "bold"
@@ -31,35 +44,35 @@ class Counter extends Component {
     return (
       <React.Fragment>
         {/* <img src={this.state.imageUrl} alt="" /> */}
-        {/* <span style={this.style} className={this.getBadgeClasses()}>
+        <span style={this.style} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
         {/* _____^ You can write any js expression meaning anything that produces a value */}
-        {/* <button
+        <button
+          onClick={this.handleIncrement}
           style={{ height: 30 }}
           type="button"
           className="btn btn-secondary btn-sm"
         >
           Increment
-        </button>{" "} 
-        */}
+        </button>
         {this.state.tags.length === 0 && "Don't forget to set a task!"}
         {/* how to render under certian conditions */}
         {this.renderTags()}
       </React.Fragment>
     );
   }
-  // getBadgeClasses() {
-  //   let classes = "badge m-2 badge-";
-  //   classes += this.state.count === 0 ? "warning" : "primary";
-  //   //^append
-  //   return classes;
-  // }
+  getBadgeClasses() {
+    let classes = "badge m-2 badge-";
+    classes += this.state.count === 0 ? "warning" : "primary";
+    //^append
+    return classes;
+  }
 
-  // formatCount() {
-  //   const { count } = this.state;
-  //   return count === 0 ? "Zero" : count;
-  // }
+  formatCount() {
+    const { count } = this.state;
+    return count === 0 ? "Zero" : count;
+  }
 }
 
 export default Counter;
