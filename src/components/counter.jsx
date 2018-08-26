@@ -21,16 +21,17 @@ class Counter extends Component {
   }
 
   constructor() {
-    //returns a new function
     super();
     //Needs to be b4 any statement when implementing a constructor for a React.Comp subclass
     this.handleIncrement = this.handleIncrement.bind(this);
     //_________________________________________^remember functions are objects so methods and properties are a yes
-    //this returns a
+    //_________________________________________^.bind() new function "this" given a new value
+    //this is now the counter object
   }
 
   handleIncrement() {
-    console.log("Increment Clicked", this.state.count);
+    this.setState({ count: this.state.count + 1 });
+    //updating the state of what you set
   }
 
   style = {
@@ -56,9 +57,11 @@ class Counter extends Component {
         >
           Increment
         </button>
-        {this.state.tags.length === 0 && "Don't forget to set a task!"}
-        {/* how to render under certian conditions */}
-        {this.renderTags()}
+        <div>
+          {this.state.tags.length === 0 && "Don't forget to set a task!"}
+          {/* how to render under certian conditions */}
+          {this.renderTags()}
+        </div>
       </React.Fragment>
     );
   }
