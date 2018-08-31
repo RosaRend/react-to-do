@@ -29,9 +29,10 @@ class Counter extends Component {
     //this is now the counter object
   }
 
-  handleIncrement() {
+  handleIncrement(product) {
+    console.log(product);
     this.setState({ count: this.state.count + 1 });
-    //updating the state of what you set
+    //updating the state of what is being set
   }
 
   style = {
@@ -50,7 +51,7 @@ class Counter extends Component {
         </span>
         {/* _____^ You can write any js expression meaning anything that produces a value */}
         <button
-          onClick={this.handleIncrement}
+          onClick={() => this.handleIncrement({ product })}
           style={{ height: 30 }}
           type="button"
           className="btn btn-secondary btn-sm"
