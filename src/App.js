@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+/* jshint ignore:start */
 class App extends Component {
   render() {
     return (
@@ -17,5 +18,6 @@ class App extends Component {
     );
   }
 }
+/*jshint ignore:end */
 
 export default App;
