@@ -41,8 +41,9 @@ class Counter extends Component {
   };
 
   render() {
-    // let classes = this.getBadgeClasses();
+    console.log("props", this.props);
 
+    // let classes = this.getBadgeClasses();
     return (
       <React.Fragment>
         {/* <img src={this.state.imageUrl} alt="" /> */}
