@@ -41,11 +41,12 @@ class Counter extends Component {
   };
 
   render() {
-    console.log("props", this.props);
-
+    console.log(this.props);
+    //will include all the attributes we set
     // let classes = this.getBadgeClasses();
     return (
       <React.Fragment>
+        {this.props.children}
         {/* <img src={this.state.imageUrl} alt="" /> */}
         <span style={this.style} className={this.getBadgeClasses()}>
           {this.formatCount()}
