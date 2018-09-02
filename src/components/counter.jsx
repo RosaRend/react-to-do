@@ -60,6 +60,12 @@ class Counter extends Component {
         >
           Increment
         </button>
+        <button
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
         <div>
           {this.state.tags.length === 0 && "Don't forget to set a task!"}
           {/* how to render under certian conditions */}
